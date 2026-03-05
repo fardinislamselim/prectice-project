@@ -10,4 +10,26 @@ interface Iuser {
   updatedAt?: Date;
 }
 
-const userSschema: Iuser = new mongoose.Schema({}, { timestamps: true });
+const userSschema = new mongoose.Schema<Iuser>(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+    },
+  },
+  { timestamps: true },
+);
+
+export onst User = mongoose.model("User", userSschema);
