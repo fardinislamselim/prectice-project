@@ -32,4 +32,6 @@ const userSschema = new mongoose.Schema<Iuser>(
   { timestamps: true },
 );
 
-export onst User = mongoose.model("User", userSschema);
+const User = mongoose.models.User || mongoose.model("User", userSschema);
+
+export default User;
