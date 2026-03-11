@@ -10,7 +10,7 @@ interface Iuser {
   updatedAt?: Date;
 }
 
-const userSschema = new mongoose.Schema<Iuser>(
+const userSchema = new mongoose.Schema<Iuser>(
   {
     name: {
       type: String,
@@ -32,6 +32,6 @@ const userSschema = new mongoose.Schema<Iuser>(
   { timestamps: true },
 );
 
-const User = mongoose.models.User || mongoose.model("User", userSschema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default User;
